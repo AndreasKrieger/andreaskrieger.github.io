@@ -4,8 +4,9 @@
  * 1. Live Age Calculator from Birthday (2003-01-12)
  * 2. Dynamic Copyright Year
  * 3. Accordion / Expandable Cards Handler
- * 4. Legal Impressum & Privacy Modal Handler
- * 5. Mouse Spotlight Lighting
+ * 4. 5-Way Socials List-Row Switcher
+ * 5. Legal Impressum & Privacy Modal Handler
+ * 6. Mouse Spotlight Lighting
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -49,7 +50,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Legal Modal Handler
+    // 4. 5-Way Socials List-Row Switcher
+    const rowStyleBtns = document.querySelectorAll('.row-style-btn');
+    const rowStyleViews = document.querySelectorAll('.row-style-view');
+
+    rowStyleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetStyle = btn.getAttribute('data-row-style');
+
+            rowStyleBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            rowStyleViews.forEach(view => {
+                if (view.id === `row-view-${targetStyle}`) {
+                    view.style.display = 'block';
+                } else {
+                    view.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // 5. Legal Modal Handler
     const legalModal = document.getElementById('legal-modal');
     const openLegalBtn = document.getElementById('open-legal-modal');
     const closeLegalBtn = document.getElementById('close-legal-modal');
@@ -81,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 5. Interactive Spotlight Lighting Engine
+    // 6. Interactive Spotlight Lighting Engine
     const cards = document.querySelectorAll('.spotlight-card, .glass-panel');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {

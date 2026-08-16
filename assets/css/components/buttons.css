@@ -1,5 +1,5 @@
 /* ==========================================================================
-   COMPONENT: BUTTONS & INTERACTIVE CONTROLS
+   COMPONENT: BUTTONS & 5 SOCIAL LIST-ROW VARIANTEN
    ========================================================================== */
 
 .btn {
@@ -18,7 +18,6 @@
     white-space: nowrap;
 }
 
-/* Primary Button (Ivory on Dark) */
 .btn-primary {
     background-color: var(--text-primary);
     color: var(--color-bg-base);
@@ -28,25 +27,168 @@
 .btn-primary:hover {
     background-color: #ffffff;
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(254, 254, 247, 0.25);
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
 }
 
-/* Secondary Button (Frosted Dark Glass) */
 .btn-secondary {
-    background-color: rgba(254, 254, 247, 0.05);
+    background-color: rgba(255, 255, 255, 0.04);
     color: var(--text-primary);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-    background-color: rgba(254, 254, 247, 0.1);
-    border-color: rgba(254, 254, 247, 0.25);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.25);
     transform: translateY(-1px);
 }
 
-.hero-actions {
+/* --------------------------------------------------------------------------
+   5 LIST-ROW VARIANTEN FÜR SOCIALS
+   -------------------------------------------------------------------------- */
+
+/* VARIANTE 1: Classic Bordered Rows mit Slide */
+.social-list-v1 {
     display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.social-row-v1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.95rem 0.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.social-row-v1:hover {
+    padding-left: 0.75rem;
+    padding-right: 0.5rem;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+/* VARIANTE 2: Floating Pill Rows */
+.social-list-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.social-row-v2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.15rem;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.social-row-v2:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+/* VARIANTE 3: Terminal / Tech-Mono Rows */
+.social-list-v3 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #09090c;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.social-row-v3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    text-decoration: none;
+    font-family: var(--font-family-mono);
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    transition: all 0.18s ease;
+}
+
+.social-row-v3:last-child {
+    border-bottom: none;
+}
+
+.social-row-v3:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+/* VARIANTE 4: Large Editorial Numbered Rows */
+.social-list-v4 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.social-row-v4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 0.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.social-row-v4:hover {
+    background: rgba(255, 255, 255, 0.03);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.row-num-v4 {
+    font-family: var(--font-family-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    width: 28px;
+}
+
+/* VARIANTE 5: Dotted Leader Rows (Inhaltsverzeichnis-Stil) */
+.social-list-v5 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.4rem;
+}
+
+.social-row-v5 {
+    display: flex;
+    align-items: center;
+    padding: 0.65rem 0.25rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.social-row-v5:hover {
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+.row-dots-v5 {
+    flex-grow: 1;
+    margin: 0 0.85rem;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.18);
+    height: 1px;
 }
