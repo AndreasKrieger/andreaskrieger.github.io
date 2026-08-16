@@ -1,106 +1,107 @@
 # Andreas Krieger — Design System Architecture
 
-Dieses Design-System definiert die visuelle Sprache, die semantischen Design-Tokens und die Komponenten-Architektur für die persönliche Web-Präsenz (`andreaskrieger.github.io`).
+Dieses Dokument beschreibt das finale, implementierte Design-System für die persönliche Web-Präsenz ([andreaskrieger.github.io](https://andreaskrieger.github.io)).
 
 ---
 
-## 1. Typografie-Architektur (The 3-Layer Scale)
+## 1. Farb- & Atmosphären-Architektur (Obsidian Slate)
 
-Die Typografie basiert auf einer präzise aufeinander abgestimmten 3-Schichten-Hierarchie:
+Die Website basiert auf einem tiefen, warmen Nacht-Graphit mit feinen Milchglas-Highlights:
+
+| Token | Wert | Rolle / Verwendung |
+|---|---|---|
+| `--color-bg-base` | `#08080a` | Primärer Hintergrund (Obsidian Slate) |
+| `--color-bg-surface` | `rgba(255, 255, 255, 0.03)` | Glas-Oberflächen der Panels & Cards |
+| `--color-bg-surface-hover` | `rgba(255, 255, 255, 0.06)` | Hover-Zustand für Panels |
+| `--text-primary` | `#f4f4f5` | Headlines & Primärtext (Soft-White) |
+| `--text-body` | `#d4d4d8` | Fließtext & Beschreibungen (Hohe Lesbarkeit) |
+| `--text-muted` | `#71717a` | Meta-Tags, Datumsangaben, Labels |
+| `--glass-border` | `rgba(255, 255, 255, 0.08)` | Subtile Glasränder |
+| `--glass-border-top` | `rgba(255, 255, 255, 0.18)` | Oberkanten-Lichtreflexion |
+
+---
+
+## 2. Typografie-Architektur (100% Self-Hosted / DSGVO-konform)
+
+Alle Schriftarten liegen als performante `.woff2`-Dateien lokal in `assets/fonts/` und werden ohne externe Serveranfragen ausgeliefert. Lizenz: **SIL Open Font License (OFL 1.1)**.
 
 | Schicht | Schriftfamilie | Schnitt & Tracking | Verwendungszweck |
 |---|---|---|---|
-| **Display / Headline** | `Pixelify Sans` | Semibold (`600`), Tracking `0.08em` | Hero Title, Sektionsüberschriften (`h1`, `h2`, `h3`) |
-| **Body / Copy** | `Inter` | Regular/Medium (`400`/`500`), Zeilenhöhe `1.7` | Fließtext, Beschreibungen, Essays |
-| **Meta / Data Layer** | `IBM Plex Mono` | Medium (`500`/`600`), Tracking `0.05em`, Uppercase | Badges, Chips, Navigation, Status-Labels, Buttons |
+| **Display / Headline** | `Pixelify Sans` | Semibold (`600`), Tracking `0.04em` | Hero Title, Sektionsüberschriften (`h1`, `h2`, `h3`) |
+| **Body / Copy** | `Inter` | Regular/Medium (`400`/`500`), Zeilenhöhe `1.78` | Fließtext, Geschichten, Textblöcke |
+| **Meta / Data Layer** | `IBM Plex Mono` | Medium (`500`/`600`), Tracking `0.02em` | Badges, Chips, Navigation, Altersanzeige, Code |
 
 ---
 
-## 2. 3-Tier Token-Architektur
-
-Die CSS-Variablen folgen dem modernen **W3C Design Token Standard**:
-
-```mermaid
-graph TD
-    A[Tier 1: Primitives] -->|mapped to| B[Tier 2: Semantics]
-    B -->|bound to| C[Tier 3: Components]
-    
-    A1[--primitive-color-white: #fff] --> B1[--text-primary: var...]
-    B1 --> C1[--comp-btn-primary-bg: var...]
-```
-
-1. **Tier 1: Primitives (`tokens.css`)**
-   * Reine Rohwerte (Farb-Hex, 4px Spacing-Grid, Radien-Skala, Schatten).
-2. **Tier 2: Semantics (`tokens.css`)**
-   * Bedeutung & Rolle (`--surface-card`, `--text-secondary`, `--border-subtle`, `--status-online`).
-3. **Tier 3: Components (`components/*.css`)**
-   * Element-spezifische Bindungen (`--comp-card-padding`, `--comp-btn-primary-bg`).
-
----
-
-## 3. Dateistruktur
+## 3. Dateistruktur & Komponenten-Hierarchie
 
 ```
 andreaskrieger.github.io/
 ├── index.html                  # Semantisches HTML5-Markup
 ├── DESIGN_SYSTEM.md            # Diese Spezifikation
-├── README.md                   # Repository-Dokumentation
+├── .gitignore                  # Git-Ausschlüsse (Builds, Temp)
 └── assets/
     ├── css/
-    │   ├── tokens.css          # 3-Tier Design Tokens
-    │   ├── reset.css           # Barrierefreier CSS Reset
-    │   ├── typography.css      # Typografie-Skala & Font Stacks
-    │   ├── layout.css          # Layout-Grid & Container
-    │   ├── main.css            # Master Bundle (Imports)
+    │   ├── main.css            # Master-Manifest & @import
+    │   ├── tokens.css          # Design-Tokens & Farbvariablen
+    │   ├── typography.css      # Typografie-Skala & Lesefluss
+    │   ├── reset.css           # Modern CSS Reset
+    │   ├── layout.css          # Layout-Container & Grid-System
     │   └── components/
-    │       ├── nav.css         # Frosted Glass Navbar
-    │       ├── cards.css       # Spotlight Glass Cards
-    │       ├── buttons.css     # High-Contrast & Glass Buttons
-    │       └── badges.css      # Technical Chips & Status Dots
+    │       ├── nav.css         # Minimalistische Top-Right Navbar
+    │       ├── cards.css       # Accordion-Panels & App-Window Frame
+    │       ├── buttons.css     # Primary CTA & Glass Buttons
+    │       └── badges.css      # Status-Pills & Tech-Chips
+    ├── fonts/
+    │   ├── fonts.css           # Lokale @font-face Definitionen
+    │   └── *.woff2             # 56 optimierte Schrift-Dateien
+    ├── images/
+    │   ├── andi-profile.png    # Hero Bar-Porträtfoto
+    │   └── andi-club.png       # Club-Porträtfoto
     └── js/
-        └── main.js             # Mouse-Tracking Spotlight Engine
+        └── main.js             # Live-Altersberechnung, Accordion & Spotlight
 ```
 
 ---
 
-## 4. UI-Komponenten-Referenz
+## 4. Kern-Komponenten
 
-### Spotlight Glass Card
+### 1. In-Place Accordion Cards („Andis Welt“)
+Klickbare Glass-Panels mit sanfter CSS-Transition zur Anzeige von Subpage-Inhalten ohne Seitenwechsel:
 ```html
-<article class="spotlight-card">
-    <div class="card-header">
-        <div class="card-tag">// CATEGORY_TAG</div>
-        <h3 class="card-title">Titel des Werkes</h3>
-        <p class="card-body">Beschreibungstext...</p>
-        <div class="card-meta-list">
-            <span class="chip highlight">Tech 1</span>
-            <span class="chip">Tech 2</span>
-        </div>
+<div class="glass-panel spotlight-card expandable-card is-open">
+    <div class="card-header-clickable">
+        <h3>Software</h3>
+        <div class="expand-chevron">...</div>
     </div>
-    <a href="#" class="card-action-link">Aktion öffnen <span>→</span></a>
-</article>
-```
-
-### Buttons
-```html
-<!-- Primary White CTA -->
-<a href="#projekte" class="btn btn-primary">Projekte entdecken</a>
-
-<!-- Secondary Frosted Glass -->
-<a href="https://github.com/AndreasKrieger" class="btn btn-secondary">GitHub Profil ↗</a>
-```
-
-### Status Badge
-```html
-<div class="status-badge">
-    <span class="status-dot"></span>
-    <span>STATUS_LABEL</span>
+    <div class="card-expanded-body">
+        <!-- Reicher Inhalt: Techstack, BRAVEBOX, etc. -->
+    </div>
 </div>
 ```
 
----
+### 2. BRAVEBOX App-Window Frame
+Stilisierter Desktop-Fensterrahmen mit Window-Dots und Platzhalter für Video-/Screenshot-Showcases:
+```html
+<div class="app-window-frame">
+    <div class="app-window-header">
+        <div class="window-dots">
+            <div class="window-dot red"></div>
+            <div class="window-dot yellow"></div>
+            <div class="window-dot green"></div>
+        </div>
+        <span>BRAVEBOX</span>
+    </div>
+    <div class="placeholder-screen-area">...</div>
+</div>
+```
 
-## 5. Zukünftige Erweiterungsschritte
-
-* **Unterseiten**: Projekt-Detailseiten (`/projects/djbox.html`) erben direkt `assets/css/main.css`.
-* **Theming**: Für spätere Akzentfarben oder Themes müssen nur die Tier-2 Semantik-Tokens in `tokens.css` angepasst werden.
+### 3. Dezentrales Impressum-Modal (§ 5 DDG & DSGVO)
+Abgedunkeltes Milchglas-Overlay für rechtliche Pflichtangaben:
+```html
+<div id="legal-modal" class="modal-backdrop">
+    <div class="modal-dialog-box">
+        <!-- Angaben gem. § 5 DDG & DSGVO-Hinweise -->
+    </div>
+</div>
+```
