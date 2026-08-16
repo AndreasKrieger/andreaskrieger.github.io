@@ -1,0 +1,128 @@
+/* ==========================================================================
+   LAYOUT: ANDI'S SIGNATURE MASTER STRUCTURE (RESTORED)
+   ========================================================================== */
+
+body {
+    background-color: var(--color-bg-base);
+    color: var(--text-body);
+    min-height: 100vh;
+}
+
+.page-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--primitive-space-10);
+    padding-bottom: var(--primitive-space-12);
+}
+
+.container {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 var(--primitive-space-5);
+}
+
+/* Ambient Subtle Background Accent */
+.ambient-glow {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 450px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.035) 0%,
+        rgba(255, 255, 255, 0.01) 40%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Hero Section */
+.hero {
+    padding-top: var(--primitive-space-8);
+    padding-bottom: var(--primitive-space-2);
+}
+
+/* 2-Column Hero / About Grid with Photo */
+.hero-content-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .hero-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Photo Card Frame */
+.profile-photo-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-photo-frame:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.profile-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 4 / 5;
+}
+
+/* Sections */
+.section-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--primitive-space-4);
+    scroll-margin-top: var(--primitive-space-8);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: var(--primitive-space-2);
+    margin-bottom: var(--primitive-space-2);
+}
+
+.section-subtitle {
+    font-family: var(--font-family-mono);
+    font-size: var(--type-scale-meta);
+    color: var(--text-muted);
+}
+
+/* Footer */
+.site-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: var(--primitive-space-6);
+    margin-top: var(--primitive-space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-family: var(--font-family-body);
+    flex-wrap: wrap;
+    gap: 1rem;
+}

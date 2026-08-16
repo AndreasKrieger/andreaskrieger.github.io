@@ -1,38 +1,248 @@
 <!DOCTYPE html>
-    <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Andreas Krieger – Projekte & Gedanken</title>
-        <style>
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                line-height: 1.6;
-                max-width: 800px;
-                margin: 40px auto;
-                padding: 0 20px;
-                color: #333;
-                background-color: #fcfcfc;
-            }
-            h1 { color: #111; border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
-            .project-card {
-                background: white;
-                border: 1px solid #e1e4e8;
-                padding: 16px 20px;
-                border-radius: 8px;
-                margin-top: 15px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Andreas Krieger</h1>
-        <p>Willkommen auf meiner persönlichen Website. Hier teile ich meine Projekte und Gedanken.</p>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andreas Krieger (Andi)</title>
+    
+    <!-- Meta & OpenGraph -->
+    <meta name="description" content="Persönliche Website von Andi Krieger (23, Bayern) — Software, Musik, Gym, Dankbarkeit, Neugier und Dinge selbst erschaffen.">
+    <meta name="author" content="Andreas Krieger">
+    
+    <!-- 100% Self-Hosted & Local CSS Design System (Zero External Google Calls) -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
 
-        <h2>Meine Projekte</h2>
-        <div class="project-card">
-            <h3>Projekt 1</h3>
-            <p>Eine kurze Beschreibung über das, woran du gerade arbeitest.</p>
+    <!-- Ambient Subtle Glow -->
+    <div class="ambient-glow"></div>
+
+    <!-- Navigation Header (Clean Top-Right) -->
+    <header class="nav-bar">
+        <nav class="nav-inner" aria-label="Hauptnavigation">
+            <div class="nav-links">
+                <a href="#about" class="nav-link">Über mich</a>
+                <a href="#welt" class="nav-link">Andis Welt</a>
+                <a href="#socials" class="nav-link">Socials</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        <div class="page-wrapper">
+
+            <!-- Hero Section: Text + Foto in Andis Stil -->
+            <section class="hero" id="about">
+                <h1 class="text-display">
+                    Hi, ich bin Andi.
+                </h1>
+
+                <div class="hero-content-grid">
+                    
+                    <!-- Left: Dein persönlicher Text -->
+                    <div class="lead-story" style="margin: 0;">
+                        <p style="color: var(--text-muted); font-size: 1rem; font-family: var(--font-family-mono); letter-spacing: 0.02em;">
+                            <span class="live-age">23</span> Jahre alt · Bayern
+                        </p>
+
+                        <p>
+                            Die meiste Zeit sitze ich am Rechner, weil ich es liebe, mich kreativ auszuleben und das zu tun, was mich glücklich macht. Am liebsten mache ich das, indem ich Software baue, Musik erschaffe oder neue Konzepte und Themen lerne.
+                        </p>
+
+                        <p>
+                            Musikalisch produziere ich gerne EDM-Bootlegs, lege in Nachtclubs auf oder spiele am Klavier und singe dazu. Ins Gym gehe ich auch regelmäßig.
+                        </p>
+
+                        <p>
+                            Das Wichtigste ist, nicht nur passiv Inhalte zu konsumieren (Social Media, YouTube, etc.), sondern selbst die Dinge in die Hand zu nehmen und zu erschaffen.
+                        </p>
+
+                        <p>
+                            Am Ende geht’s mir vor allem darum: dankbar zu sein, eine gute Zeit zu haben, sich gegenseitig zu unterstützen, gute Gespräche zu führen und anderen eine echte Freude zu machen. Ich bin fest davon überzeugt, dass wir uns nur so als Gesellschaft weiterentwickeln können.
+                        </p>
+                    </div>
+
+                    <!-- Right: Dein Foto im edlen Rahmen -->
+                    <div>
+                        <div class="profile-photo-frame spotlight-card">
+                            <img src="./assets/images/andi-profile.png" alt="Andreas Krieger (Andi)" loading="eager">
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Andis Welt (Software, Musik, Mindset & Weltansichten) -->
+            <section class="section-block" id="welt">
+                <div class="section-header">
+                    <h2>Andis Welt</h2>
+                    <span class="section-subtitle">Klick zum Aufklappen</span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                    
+                    <!-- Reiter 1: Software -->
+                    <div class="glass-panel spotlight-card expandable-card is-open">
+                        <div class="card-header-clickable">
+                            <h3 style="margin: 0; font-size: 1.45rem; color: var(--text-primary);">Software</h3>
+                            <div class="expand-chevron">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="card-expanded-body">
+                            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                                
+                                <!-- Andis persönlicher Text zu Software & KI -->
+                                <div style="display: flex; flex-direction: column; gap: 0.95rem; font-size: 0.98rem; line-height: 1.75; color: var(--text-body);">
+                                    <p style="margin: 0;">
+                                        Ich gebe mein Bestes, gute und ästhetische Software zu kreieren. Die meiste Praxiserfahrung habe ich als Fullstack-Entwickler im .NET-Ökosystem.
+                                    </p>
+                                    <p style="margin: 0;">
+                                        Programmiersprachen sind in meinen Augen aber nur Mittel zum Zweck. Früher hat man Code in Maschinensprache übersetzt. Heute übersetzt KI die menschliche Sprache direkt in Code und ist damit die neue Abstraktionsebene in der Softwareentwicklung. Dieses Werkzeug steht jedem offen. Entscheidend ist nicht mehr, ob man programmieren kann, sondern dass man Systemzusammenhänge versteht, logisch denkt und weiß, was man eigentlich erschaffen will.
+                                    </p>
+                                    <p style="margin: 0;">
+                                        Besonders gerne entwickle ich mit <strong>.NET MAUI</strong> und <strong>Blazor</strong>. Das ist mein aktuelles Projekt, welches aus meiner Leidenschaft als DJ entstanden ist:
+                                    </p>
+                                </div>
+
+                                <!-- BRAVEBOX App-Window Frame Showcase -->
+                                <div class="app-window-frame">
+                                    <div class="app-window-header">
+                                        <div class="window-dots">
+                                            <div class="window-dot" style="background: #ef4444; opacity: 0.8;"></div>
+                                            <div class="window-dot" style="background: #eab308; opacity: 0.8;"></div>
+                                            <div class="window-dot" style="background: #22c55e; opacity: 0.8;"></div>
+                                        </div>
+                                        <span style="font-family: var(--font-family-mono); font-size: 0.8rem; color: #ffffff; font-weight: 500;">BRAVEBOX</span>
+                                        <div style="width: 38px;"></div>
+                                    </div>
+
+                                    <div class="placeholder-screen-area">
+                                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; color: #ffffff;">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                                        </div>
+                                        <div>
+                                            <strong style="font-size: 1.15rem; color: #ffffff; display: block; margin-bottom: 0.25rem;">BRAVEBOX Interface Vorschau</strong>
+                                            <span style="font-family: var(--font-family-mono); font-size: 0.8rem; color: var(--text-muted);">[ Screenshots & Video-Walkthrough folgen in Kürze ]</span>
+                                        </div>
+                                    </div>
+
+                                    <div style="padding: 1.25rem 1.5rem; background: rgba(255,255,255,0.015); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                                        <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0; line-height: 1.5; max-width: 50ch;">
+                                            Track-Vorbereitung, Playlisten und DJ-Workflows blitzschnell und latenzfrei.
+                                        </p>
+                                        <a href="https://github.com/AndreasKrieger" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.8rem; height: 32px;">
+                                            GitHub Repository ↗
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reiter 2: Musik (Platzhalter) -->
+                    <div class="glass-panel spotlight-card expandable-card">
+                        <div class="card-header-clickable">
+                            <h3 style="margin: 0; font-size: 1.45rem; color: var(--text-primary);">Musik</h3>
+                            <div class="expand-chevron">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="card-expanded-body">
+                            <div style="text-align: center; padding: 2rem 1rem; background: rgba(255, 255, 255, 0.015); border: 1px dashed rgba(255, 255, 255, 0.1); border-radius: 14px;">
+                                <div style="font-family: var(--font-family-mono); font-size: 0.88rem; color: var(--text-muted);">
+                                    [ Musik, DJ-Sets & Produktionen folgen in Kürze ]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reiter 3: Mindset & Weltansichten (Platzhalter) -->
+                    <div class="glass-panel spotlight-card expandable-card">
+                        <div class="card-header-clickable">
+                            <h3 style="margin: 0; font-size: 1.45rem; color: var(--text-primary);">Mindset & Weltansichten</h3>
+                            <div class="expand-chevron">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="card-expanded-body">
+                            <div style="text-align: center; padding: 2rem 1rem; background: rgba(255, 255, 255, 0.015); border: 1px dashed rgba(255, 255, 255, 0.1); border-radius: 14px;">
+                                <div style="font-family: var(--font-family-mono); font-size: 0.88rem; color: var(--text-muted);">
+                                    [ Gedanken, Routinen & Ansichten folgen in Kürze ]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Socials & Kontakt -->
+            <section id="socials" class="section-block">
+                <div class="section-header">
+                    <h2>Socials</h2>
+                    <span class="section-subtitle">Kontakt & Netzwerk</span>
+                </div>
+
+                <div class="glass-panel spotlight-card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; padding: 2.25rem;">
+                    <div>
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; color: var(--text-primary);">Bock auf Austausch oder gemeinsame Ideen?</h3>
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem; max-width: 48ch; line-height: 1.65;">
+                            Egal ob über Software, Musikproduktion, DJing, Gym, KI oder persönliche Entwicklung – schreib mir gern!
+                        </p>
+                    </div>
+                    <div class="hero-actions" style="margin: 0;">
+                        <a href="https://www.linkedin.com/in/andreas-krieger-683a30364/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            LinkedIn Profil ↗
+                        </a>
+                        <a href="https://github.com/AndreasKrieger" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            GitHub Profil ↗
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer mit dezentem Impressum-Link -->
+            <footer class="site-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>© <span id="current-year">2026</span> Andi Krieger · Bayern</div>
+                <div>
+                    <a href="#impressum" id="open-legal-modal" style="color: var(--text-muted); text-decoration: none; font-size: 0.78rem; font-family: var(--font-family-mono); transition: color 0.2s ease;">
+                        Impressum & Rechtliches
+                    </a>
+                </div>
+            </footer>
+
         </div>
-    </body>
-    </html
+    </main>
+
+    <!-- Radikal gestripptes, sauberes Impressum-Modal -->
+    <div id="legal-modal" class="modal-backdrop" aria-hidden="true" role="dialog">
+        <div class="modal-dialog-box" style="max-width: 480px; padding: 2rem;">
+            <button id="close-legal-modal" class="modal-close-btn" title="Schließen" aria-label="Schließen">✕</button>
+            <h3 style="margin: 0 0 1.25rem 0; font-size: 1.25rem; color: #ffffff;">Impressum & Datenschutz</h3>
+            
+            <div style="font-size: 0.9rem; line-height: 1.65; color: #cbd5e1; display: flex; flex-direction: column; gap: 1.25rem;">
+                <div>
+                    <strong style="color: #ffffff; display: block; margin-bottom: 0.25rem;">Angaben gemäß § 5 DDG</strong>
+                    Andreas Krieger<br>
+                    Bayern, Deutschland<br>
+                    E-Mail: <a href="mailto:andreaskrieger.software@gmail.com" style="color: #ffffff; text-decoration: underline;">andreaskrieger.software@gmail.com</a>
+                </div>
+
+                <div>
+                    <strong style="color: #ffffff; display: block; margin-bottom: 0.25rem;">Datenschutz</strong>
+                    Keine Cookies. Kein Tracking. Alle Schriftarten sind 100% lokal gehostet. Das Hosting erfolgt über GitHub Pages (Server-Logfiles).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript Engine -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

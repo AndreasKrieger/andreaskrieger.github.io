@@ -1,0 +1,17 @@
+/* ==========================================================================
+   MAIN CSS MANIFEST (100% SELF-HOSTED FONTS & ZERO EXTERNAL REQUESTS)
+   ========================================================================== */
+
+/* 1. Self-Hosted Local Fonts (DSGVO-konform) */
+@import '../fonts/fonts.css';
+
+/* 2. Foundation */
+@import './tokens.css';
+@import './reset.css';
+@import './typography.css';
+@import './layout.css';
+
+/* 3. Components */
+@import './components/buttons.css';
+@import './components/cards.css';
+@import './components/nav.css';

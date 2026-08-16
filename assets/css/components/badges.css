@@ -1,0 +1,73 @@
+/* ==========================================================================
+   COMPONENT: BADGES, CHIPS & STATUS DOTS (MINIMALIST B/W)
+   ========================================================================== */
+
+/* Status Header Badge */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--primitive-space-2);
+    padding: 0.35rem 0.85rem;
+    background: var(--primitive-alpha-glass-2);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--primitive-radius-full);
+    font-family: var(--font-family-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: var(--primitive-space-5);
+    letter-spacing: 0.02em;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background: #10b981; /* subtle green online indicator or pure white */
+    border-radius: var(--primitive-radius-full);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+/* Technical Skill / Stack Pill */
+.chip {
+    font-family: var(--font-family-mono);
+    font-size: 0.76rem;
+    font-weight: 500;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--primitive-radius-xs);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.chip:hover {
+    border-color: var(--border-hover);
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.chip.highlight {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.22);
+    color: var(--text-primary);
+}
+
+/* Status Pill for Projects */
+.status-pill {
+    font-family: var(--font-family-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--primitive-radius-xs);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+}
+
+.status-pill.active {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}

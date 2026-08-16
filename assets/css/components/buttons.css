@@ -1,0 +1,52 @@
+/* ==========================================================================
+   COMPONENT: BUTTONS & INTERACTIVE CONTROLS
+   ========================================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    font-family: var(--font-family-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-radius: var(--primitive-radius-sm);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+}
+
+/* Primary Button (Ivory on Dark) */
+.btn-primary {
+    background-color: var(--text-primary);
+    color: var(--color-bg-base);
+    border: 1px solid var(--text-primary);
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(254, 254, 247, 0.25);
+}
+
+/* Secondary Button (Frosted Dark Glass) */
+.btn-secondary {
+    background-color: rgba(254, 254, 247, 0.05);
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(254, 254, 247, 0.1);
+    border-color: rgba(254, 254, 247, 0.25);
+    transform: translateY(-1px);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}

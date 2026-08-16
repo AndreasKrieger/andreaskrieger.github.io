@@ -1,0 +1,44 @@
+/* ==========================================================================
+   COMPONENT: NAVIGATION BAR (ANDI'S CLEAN TOP-RIGHT)
+   ========================================================================== */
+
+.nav-bar {
+    max-width: 860px;
+    margin: var(--primitive-space-6) auto 0 auto;
+    padding: 0 var(--primitive-space-5);
+    position: relative;
+    z-index: 100;
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.75rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-family: var(--font-family-mono);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 540px) {
+    .nav-links {
+        gap: 1.1rem;
+        font-size: 0.82rem;
+    }
+}
