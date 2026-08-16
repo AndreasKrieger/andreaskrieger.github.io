@@ -4,7 +4,7 @@
  * 1. Live Age Calculator from Birthday (2003-01-12)
  * 2. Dynamic Copyright Year
  * 3. Accordion / Expandable Cards Handler
- * 4. 5-Way Socials List-Row Switcher
+ * 4. Hero Photo Style Switcher (5 Styles)
  * 5. Legal Impressum & Privacy Modal Handler
  * 6. Mouse Spotlight Lighting
  */
@@ -50,19 +50,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. 5-Way Socials List-Row Switcher
-    const rowStyleBtns = document.querySelectorAll('.row-style-btn');
-    const rowStyleViews = document.querySelectorAll('.row-style-view');
+    // 4. Hero Photo Style Switcher
+    const photoStyleBtns = document.querySelectorAll('.photo-style-btn');
+    const photoStyleViews = document.querySelectorAll('.photo-style-view');
 
-    rowStyleBtns.forEach(btn => {
+    photoStyleBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            const targetStyle = btn.getAttribute('data-row-style');
+            const targetStyle = btn.getAttribute('data-photo-style');
 
-            rowStyleBtns.forEach(b => b.classList.remove('active'));
+            photoStyleBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            rowStyleViews.forEach(view => {
-                if (view.id === `row-view-${targetStyle}`) {
+            photoStyleViews.forEach(view => {
+                if (view.id === `photo-view-${targetStyle}`) {
                     view.style.display = 'block';
                 } else {
                     view.style.display = 'none';
